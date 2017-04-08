@@ -1,0 +1,27 @@
+{
+    "parent": "block/command_block",
+    "overrides": [
+    
+        { "predicate": {"damaged": 0, "damage": 1}, "model": "block/replaceme"},
+        { "predicate": {"damaged": 0, "damage": 0.9375}, "model": "block/replaceme"},
+        { "predicate": {"damaged": 0, "damage": 0.875}, "model": "block/replaceme"},
+        { "predicate": {"damaged": 0, "damage": 0.875}, "model": "block/replaceme"},
+        { "predicate": {"damaged": 0, "damage": 0.8125}, "model": "block/replaceme"},
+        { "predicate": {"damaged": 0, "damage": 0.75}, "model": "block/replaceme"},
+        { "predicate": {"damaged": 0, "damage": 0.6875}, "model": "block/replaceme"},
+        { "predicate": {"damaged": 0, "damage": 0.625}, "model": "block/replaceme"},
+        { "predicate": {"damaged": 0, "damage": 0.625}, "model": "block/replaceme"},
+        { "predicate": {"damaged": 0, "damage": 0.5625}, "model": "block/replaceme"},
+        { "predicate": {"damaged": 0, "damage": 0.5}, "model": "block/replaceme"},
+        { "predicate": {"damaged": 0, "damage": 0.4375}, "model": "block/replaceme"},
+        { "predicate": {"damaged": 0, "damage": 0.375}, "model": "block/replaceme"},
+        { "predicate": {"damaged": 0, "damage": 0.3125}, "model": "block/replaceme"},
+        { "predicate": {"damaged": 0, "damage": 0.25}, "model": "block/replaceme"},
+        { "predicate": {"damaged": 0, "damage": 0.1875}, "model": "block/replaceme"},
+        { "predicate": {"damaged": 0, "damage": 0.125}, "model": "block/replaceme"},
+        { "predicate": {"damaged": 0, "damage": 0.0625}, "model": "item/mob_spawner"},
+        
+        { "predicate": {"damaged": 1, "damage": 0}, "model": "block/m"}
+	
+    ]
+}
