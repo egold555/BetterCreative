@@ -23,7 +23,7 @@ public class BCSpawner{
 	
 	public BCSpawner() {
 		for (EntityEntry e : ForgeRegistries.ENTITIES.getValues()) {
-			GameRegistry.register(new OverrideCMD(Texture.SPAWNER, Blocks.MOB_SPAWNER, 0, TextFormatting.RESET + e.getName() + " Spawner", getBlockEntityTag(e.getName())));
+			GameRegistry.register(new OverrideCMD(Texture.SPAWNER, Blocks.MOB_SPAWNER, 0, TextFormatting.RESET + e.getName() + " Spawner", getBlockEntityTag(e.getRegistryName().toString())));
 		}
 	}
 
