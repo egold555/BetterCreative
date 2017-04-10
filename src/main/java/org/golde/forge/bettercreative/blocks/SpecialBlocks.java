@@ -38,7 +38,7 @@ public class SpecialBlocks {
 		
 		
 		for(Item i :items) {
-			GameRegistry.registerItem(i);
+			GameRegistry.register(i);
 		}
 	}
 	

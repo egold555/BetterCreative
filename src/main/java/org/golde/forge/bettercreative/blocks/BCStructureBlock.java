@@ -10,11 +10,17 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BCStructureBlock extends Item{
+	
+	public BCStructureBlock() {
+		setRegistryName("BC_STRUCTURE_BLOCK");
+		setUnlocalizedName("BC_STRUCTURE_BLOCK");
+	}
 	
 	@Override
 	public boolean getHasSubtypes()
@@ -29,7 +35,7 @@ public class BCStructureBlock extends Item{
 
 	@Override
 	@SideOnly(Side.CLIENT)
-    public void getSubItems(Item itemIn, CreativeTabs tab, List<ItemStack> subItems)
+    public void getSubItems(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> subItems)
     {
 		subItems.add(getStructureBlock("DATA"));
 		subItems.add(getStructureBlock("SAVE"));

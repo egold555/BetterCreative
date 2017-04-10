@@ -13,6 +13,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -20,8 +22,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BCSpawner{
 	
 	public BCSpawner() {
-		for (String name : EntityList.NAME_TO_CLASS.keySet()) {
-			GameRegistry.registerItem(new OverrideCMD(Texture.SPAWNER, Blocks.MOB_SPAWNER, 0, TextFormatting.RESET + name + " Spawner", getBlockEntityTag(name)));
+		for (EntityEntry e : ForgeRegistries.ENTITIES.getValues()) {
+			GameRegistry.register(new OverrideCMD(Texture.SPAWNER, Blocks.MOB_SPAWNER, 0, TextFormatting.RESET + e.getName() + " Spawner", getBlockEntityTag(e.getName())));
 		}
 	}
 

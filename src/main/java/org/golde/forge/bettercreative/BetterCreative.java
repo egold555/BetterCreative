@@ -15,6 +15,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -28,12 +29,12 @@ public class BetterCreative {
 
 	public static final CreativeTabs CT_TAB = new CreativeTabs("BCT_Tab"){
 		@Override
-		public Item getTabIconItem() {
-			return Item.getItemFromBlock(Blocks.BARRIER);
+		public ItemStack getTabIconItem() {
+			return new ItemStack(Item.getItemFromBlock(Blocks.BARRIER));
 		}
 		
 		//Sorts all items alphabetically by there display name
-		public void displayAllRelevantItems(List<ItemStack> list) {
+		public void displayAllRelevantItems(NonNullList<ItemStack> list) {
 			super.displayAllRelevantItems(list);
 			Collections.sort(list, new Comparator<ItemStack>() {
 			      @Override
@@ -52,18 +53,18 @@ public class BetterCreative {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
 		
-		GameRegistry.registerItem(new OverrideItem(CT_TAB, Blocks.DRAGON_EGG));
-		GameRegistry.registerItem(new OverrideItem(CT_TAB, Blocks.COMMAND_BLOCK));
-		GameRegistry.registerItem(new OverrideItem(CT_TAB, Blocks.CHAIN_COMMAND_BLOCK));
-		GameRegistry.registerItem(new OverrideItem(CT_TAB, Blocks.REPEATING_COMMAND_BLOCK));
-		GameRegistry.registerItem(new OverrideItem(CT_TAB, Blocks.BARRIER));
-		GameRegistry.registerItem(new OverrideItem(CT_TAB, Blocks.FARMLAND));
-		GameRegistry.registerItem(new OverrideItem(CT_TAB, Blocks.RED_MUSHROOM_BLOCK));
-		GameRegistry.registerItem(new OverrideItem(CT_TAB, Blocks.BROWN_MUSHROOM_BLOCK));
-		GameRegistry.registerItem(new OverrideItem(CT_TAB, Item.getItemById(217)));
-		GameRegistry.registerItem(new OverrideItem(CT_TAB, Items.COMMAND_BLOCK_MINECART));
-		GameRegistry.registerItem(new OverrideItem(CT_TAB, Blocks.GRASS_PATH));
-		GameRegistry.registerItem(new BCStructureBlock(), "BC_STRUCTURE_BLOCK");
+		GameRegistry.register(new OverrideItem(CT_TAB, Blocks.DRAGON_EGG));
+		GameRegistry.register(new OverrideItem(CT_TAB, Blocks.COMMAND_BLOCK));
+		GameRegistry.register(new OverrideItem(CT_TAB, Blocks.CHAIN_COMMAND_BLOCK));
+		GameRegistry.register(new OverrideItem(CT_TAB, Blocks.REPEATING_COMMAND_BLOCK));
+		GameRegistry.register(new OverrideItem(CT_TAB, Blocks.BARRIER));
+		GameRegistry.register(new OverrideItem(CT_TAB, Blocks.FARMLAND));
+		GameRegistry.register(new OverrideItem(CT_TAB, Blocks.RED_MUSHROOM_BLOCK));
+		GameRegistry.register(new OverrideItem(CT_TAB, Blocks.BROWN_MUSHROOM_BLOCK));
+		GameRegistry.register(new OverrideItem(CT_TAB, Item.getItemById(217)));
+		GameRegistry.register(new OverrideItem(CT_TAB, Items.COMMAND_BLOCK_MINECART));
+		GameRegistry.register(new OverrideItem(CT_TAB, Blocks.GRASS_PATH));
+		GameRegistry.register(new BCStructureBlock());
 		SpecialBlocks.register();
 	}
 	
