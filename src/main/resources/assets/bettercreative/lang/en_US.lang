@@ -1,6 +1,4 @@
-itemGroup.BCT_Mod=BetterCreative: Mod Only
-itemGroup.BCT_Server=BetterCreative: Vinalla
-itemGroup.BCT_Both=BetterCreative: Both
+itemGroup.BCT_Tab=Better Creative
 
 item.BC_43-8.name=Stone Slab
 item.BC_43-9.name=Sandstone Slab

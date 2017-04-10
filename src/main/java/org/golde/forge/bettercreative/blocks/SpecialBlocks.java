@@ -3,9 +3,6 @@ package org.golde.forge.bettercreative.blocks;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.golde.forge.bettercreative.BetterCreative;
-import org.golde.forge.bettercreative.base.BlockData;
-import org.golde.forge.bettercreative.base.OverrideBlock;
 import org.golde.forge.bettercreative.base.OverrideCMD;
 
 import net.minecraft.client.Minecraft;
@@ -16,38 +13,23 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class SpecialBlocks {
 
-	static List<BlockData> data = new ArrayList<BlockData>();
 	static List<Item> items = new ArrayList<Item>();
-	
-	//Cake?
-	//TODO: Block Textures / models	
+
 	public static void register() {
-		data.add(new BlockData(Blocks.DOUBLE_STONE_SLAB, 8, 0));
-		data.add(new BlockData(Blocks.DOUBLE_STONE_SLAB, 9, 0));
-		data.add(new BlockData(Blocks.DOUBLE_STONE_SLAB2, 8));
-		data.add(new BlockData(Blocks.BROWN_MUSHROOM_BLOCK, 0));
-		data.add(new BlockData(Blocks.LIT_FURNACE, 0));
-		data.add(new BlockData(Blocks.PORTAL, 0));
-		data.add(new BlockData(Blocks.END_PORTAL, 0));
-		data.add(new BlockData(Blocks.END_GATEWAY, 0));
-		data.add(new BlockData(Blocks.DAYLIGHT_DETECTOR_INVERTED, 0));
-		data.add(new BlockData(Blocks.WHEAT, 7));
-		data.add(new BlockData(Blocks.PUMPKIN_STEM, 7));
-		data.add(new BlockData(Blocks.MELON_STEM, 7));
-		for(int i = 1; i <=10; i++) { //http://minecraft.gamepedia.com/Mushroom_(block)
-			data.add(new BlockData(Blocks.BROWN_MUSHROOM_BLOCK, i));
-			data.add(new BlockData(Blocks.RED_MUSHROOM_BLOCK, i));
-		}
 		
-		for(BlockData d:data) {
-			items.add(new OverrideBlock(BetterCreative.CT_MOD, d));
-			items.add(new OverrideCMD(BetterCreative.CT_SERVER, d));
-		}
-		
+		items.add(new OverrideCMD(OverrideCMD.STONE_SLAB, Blocks.DOUBLE_STONE_SLAB, 8, "Stone Slab"));
+		items.add(new OverrideCMD(OverrideCMD.SANDSTONE_SLAB, Blocks.DOUBLE_STONE_SLAB, 9, "Sandstone Slab"));
+		items.add(new OverrideCMD(OverrideCMD.RED_SANDSTONE_SLAB, Blocks.DOUBLE_STONE_SLAB2, 8, "Red Sandstone Slab"));
+		items.add(new OverrideCMD(OverrideCMD.LIT_FURNACE, Blocks.LIT_FURNACE, 0 , "Lit Furnace"));
+		items.add(new OverrideCMD(OverrideCMD.PORTAL, Blocks.PORTAL, 0 , "Nether Portal"));
+		items.add(new OverrideCMD(OverrideCMD.END_PORTAL, Blocks.END_PORTAL, 0 , "End Portal"));
+		items.add(new OverrideCMD(OverrideCMD.END_GATEWAY, Blocks.END_GATEWAY, 0 , "End Gateway"));
+		items.add(new OverrideCMD(OverrideCMD.DAYLIGHT_DETECTOR_INVERTED, Blocks.DAYLIGHT_DETECTOR_INVERTED, 0 , "Daylight Detector Inverted"));
+		items.add(new OverrideCMD(OverrideCMD.UNKNOWN, Blocks.BROWN_MUSHROOM_BLOCK, 0, "Mushroom Pores"));
+		items.add(new OverrideCMD(OverrideCMD.UNKNOWN, Blocks.BROWN_MUSHROOM_BLOCK, 15, "Mushroom Stem"));
 		for(Item i :items) {
 			GameRegistry.registerItem(i);
 		}
-		
 	}
 	
 	public static void registerRenders() {

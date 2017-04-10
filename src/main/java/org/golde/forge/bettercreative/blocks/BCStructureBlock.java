@@ -24,7 +24,7 @@ public class BCStructureBlock extends Item{
 	
 	@Override
 	public CreativeTabs getCreativeTab() {
-		return BetterCreative.CT_BOTH;
+		return BetterCreative.CT_TAB;
 	}
 
 	@Override
