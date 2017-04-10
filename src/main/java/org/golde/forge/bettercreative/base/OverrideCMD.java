@@ -22,18 +22,6 @@ public class OverrideCMD extends Item{
 
 	List<ItemStack> toAdd = new ArrayList<ItemStack>();
 	
-	
-	public static final int UNKNOWN = 0;
-	public static final int SPAWNER = 1;
-	public static final int STONE_SLAB = 2;
-	public static final int SANDSTONE_SLAB = 3;
-	public static final int RED_SANDSTONE_SLAB = 4;
-	public static final int LIT_FURNACE = 5;
-	public static final int PORTAL = 6;
-	public static final int END_PORTAL = 7;
-	public static final int END_GATEWAY = 8;
-	public static final int DAYLIGHT_DETECTOR_INVERTED = 9;
-	
 	public OverrideCMD(int texture, Block b, int data, String name) {
 		this(texture, b, data, name, null);
 	}

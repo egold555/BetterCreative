@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.golde.forge.bettercreative.BetterCreative;
 import org.golde.forge.bettercreative.base.OverrideCMD;
+import org.golde.forge.bettercreative.base.Texture;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityList;
@@ -20,7 +21,7 @@ public class BCSpawner{
 	
 	public BCSpawner() {
 		for (String name : EntityList.NAME_TO_CLASS.keySet()) {
-			GameRegistry.registerItem(new OverrideCMD(OverrideCMD.SPAWNER, Blocks.MOB_SPAWNER, 0, TextFormatting.RESET + name + " Spawner", getBlockEntityTag(name)));
+			GameRegistry.registerItem(new OverrideCMD(Texture.SPAWNER, Blocks.MOB_SPAWNER, 0, TextFormatting.RESET + name + " Spawner", getBlockEntityTag(name)));
 		}
 	}
 
